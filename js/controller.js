@@ -35,3 +35,35 @@
 
 // HINT:
 // setInterval(functionName, 1000); will call functionName() every 1000 miliseconds.
+
+import { timeModel } from "./model.time.js";
+import { viewDigitalClock } from "./view.digital.js";
+import { viewAnalogueClock } from "./view.analagoue.js";
+
+export function initController() {
+    function updateClocks() {
+        viewDigitalClock();
+        viewAnalogueClock();
+    }
+
+    setInterval(updateClocks, 1000);
+
+    updateClocks();
+}
+
+initController();
+
+
+let button = document.getElementById("save-button");
+button.addEventListener("click", function() {
+    let savedTime = {
+        hours: timeModel.getHours(),
+        minutes: timeModel.getMinutes(),
+        seconds: timeModel.getSeconds(),
+    };
+
+    let jsonString = JSON.stringify(savedTime);
+    localStorage.setItem("savedTime", jsonString);
+    console.log(jsonString);
+});
+

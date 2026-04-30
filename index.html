@@ -5,7 +5,30 @@
     <title>Back to the Future</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+<h1> Back to the Future</h1>
 <body>
+
+<h2>Digital Clock</h2>
+    <div id="digital-clock">00:00:00</div>
+
+<h2>Analogue Clock</h2>
+<div id="clock-position">
+    <div class="analogue-clock">
+        <div id="seconds-hand"></div>
+        <div id="minutes-hand"></div>
+        <div id="hours-hand"></div>
+        <div id="center"></div>
+    </div>
+</div>
+
+<div id="button-position">
+    <button id="save-button" >Timesaver</button>
+</div>
+
+<script type="module" src="js/model.time.js"></script>
+<script type="module" src="js/controller.js"></script>
+<script type="module" src="js/view.analagoue.js"></script>
+<script type="module" src="js/view.digital.js"></script>
 
 </body>
 </html>
