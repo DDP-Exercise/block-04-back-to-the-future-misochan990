@@ -7,7 +7,7 @@ export function viewDigitalClock(){
     let minutes = timeModel.getMinutes();
     let seconds = timeModel.getSeconds();
 
-    let view = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    let display = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
-    document.getElementById("digital-clock").textContent = view;
+    document.getElementById("digital-clock").textContent = display;
 }

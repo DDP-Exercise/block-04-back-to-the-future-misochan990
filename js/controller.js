@@ -52,3 +52,18 @@ export function initController() {
 }
 
 initController();
+
+
+let button = document.getElementById("save-button");
+button.addEventListener("click", function() {
+    let savedTime = {
+        hours: timeModel.getHours(),
+        minutes: timeModel.getMinutes(),
+        seconds: timeModel.getSeconds(),
+    };
+
+    let jsonString = JSON.stringify(savedTime);
+    localStorage.setItem("savedTime", jsonString);
+    console.log(jsonString);
+});
+
